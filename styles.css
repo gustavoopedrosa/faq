@@ -1,6 +1,4 @@
 :root {
-    --mobile: 375px;
-    --desktop: 1440px;
     --dark-desaturated-blue: hsl(238, 29%, 16%);
     --soft-red: hsl(14, 88%, 65%);
     --soft-violet: hsl(273, 75%, 66%);
@@ -38,14 +36,19 @@ html {
     align-items: center;
     background-color: white;
     border-radius: 2rem;
-
+    box-shadow: 0 2rem 2rem #00000066;
+    max-width: calc(1440px * .75);
 }
 
-.content__logo {
+.content__logo--mobile {
     width: 210px;
     position: absolute;
     transform: translateY(-61%);
-    filter: drop-shadow(0 25px #0001);
+    filter: drop-shadow(0 25px #00000011);
+}
+
+.content__logo--desktop {
+    display: none;
 }
 
 .content__section {
@@ -124,3 +127,68 @@ html {
     display: initial;
 }
 
+@media screen and (min-width : 1440px) {
+
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(var(--soft-violet), var(--soft-blue));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        min-width: 700px;
+        width: 75%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "logo faq";
+        padding: 8rem;
+        background-image: url(./assets/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: left -510% bottom 33%;
+    }
+
+    .content__logo--mobile {
+        display: none;
+    }
+
+    .content__logo--desktop {
+        display: initial;
+    }
+
+    .content__logo--desktop__woman {
+        position: absolute;
+        transform: translate(-35%, -50%);
+    }
+
+    .content__logo--desktop__box {
+        position: absolute;
+        transform: translate(-92%, -24%);
+    }
+
+    .content__section {
+        grid-area: faq;
+        padding: 0;
+        text-align: left;
+    }
+
+    .content__section__title {
+        margin-bottom: 4rem;
+    }
+
+    .content__section__list__item {
+        padding: 0 .5rem 1.5rem 0;
+    }
+
+    .content__section__list__item:hover {
+        cursor: pointer;
+    }
+
+    .content__section__list__item__title:hover {
+        transition: color .5s;
+        color: var(--soft-red);
+    }
+}
