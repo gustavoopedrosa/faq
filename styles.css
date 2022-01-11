@@ -51,6 +51,7 @@ html {
 .content__section {
     text-align: center;
     padding-top: 12rem;
+    width: 100%;
 }
 
 .content__section__title {
@@ -67,17 +68,59 @@ html {
 }
 
 .content__section__list__item {
-    padding-bottom: 1.5rem;
+    padding: 0 .5rem 1.5rem .5rem;
     border-bottom: 1px solid lightgray;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
 }
 
-.content__section__list__item h2 {
+.content__section__list__item__title {
     font-weight: 400;
     font-size: 1.4rem;
-    color: gray;
+    color: var(--grayish-blue);
+    flex-grow: 1;
+    text-align: left;
 }
+
+.content__section__list__item__img {
+    transition: .5s;
+}
+
+.content__section__list__item__desc {
+    color: var(--grayish-blue);
+    text-align: left;
+    display: none;
+    font-size: 1.4rem;
+}
+
+/* .bold {
+    font-weight: bold;
+    color: var(--dark-grayish-blue);
+} */
+
+/* 
+.active {
+    display: initial;
+} */
+/* 
+.rotate {
+    transform: rotate(180deg);
+    transition: .5s;
+} */
+
+.active .content__section__list__item__title{
+    font-weight: bold;
+}
+
+.active .content__section__list__item__img{
+    transform: rotate(180deg);
+}
+
+.active .content__section__list__item__desc{
+    display: initial;
+}
+
