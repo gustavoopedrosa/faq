@@ -2,13 +2,22 @@ const faqOptions = document.querySelectorAll('.content__section__list__item')
 
 
 
-faqOptions.forEach((option) => {
+faqOptions.forEach((option, key) => {
     option.addEventListener('click', () => {
 
         // ---------- maneira eficiente
         option.classList.toggle('active')
 
-        // ---------- maneira trabalhosa
+        // Compara o target do click com outra elemento ja selecionado e remove a classe
+        // active do elemento que não é o target
+
+        faqOptions.forEach((element, index) => {
+            if (key !== index) {
+                element.classList.remove('active')
+            }
+        })
+
+        // ---------- maneira ineficiente
 
         // option.firstElementChild.classList.toggle('bold')
 
