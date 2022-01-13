@@ -128,7 +128,7 @@ html {
     display: initial;
 }
 
-@media screen and (min-width : 1440px) {
+@media screen and (min-width : 1250px) {
 
     .container {
         width: 100%;
@@ -149,7 +149,7 @@ html {
         padding: 8rem;
         background-image: url(./assets/bg-pattern-desktop.svg);
         background-repeat: no-repeat;
-        background-position: left -689% bottom 32%;
+        background-position: left -578px bottom -100px;
         height: 563px;
     }
 
